@@ -20,8 +20,8 @@ contract accessPrivateData{
     mapping(uint256 => uint256) public data;
     //slot 6 
     mapping(uint256 => uint256) private _data;
-
-    uint256 public k = 123; 
+    //slot 7
+    uint256[] public dynamicArr; 
 
     constructor(){
         setData2(123);
@@ -35,7 +35,24 @@ contract accessPrivateData{
         _data[0xABC] = data_;
     }
 
+    function setArr(uint256 i, uint256 k)public{
+        dynamicArr[i] =k;
+    }
+
+    function putData(uint256 num_)public{
+        dynamicArr.push(num_);
+    }
+
+    //get mapping slot location
     function mapLocation(uint256 slot, uint256 key) public pure returns (bytes32) {
         return keccak256(abi.encodePacked(key, slot));
-}
+    }
+
+    //get dynamic arr slot location
+    //slot : The slot occupied by the dynamic array when it is declared
+    //result is just arr[0] slot location
+    //If you wnat another data in the arr, arr[n]=result + n
+    function arrLocation(uint256 slot) public pure returns (bytes32) {
+        return keccak256(abi.encodePacked(bytes32(slot)));
+    }
 }
