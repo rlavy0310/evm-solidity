@@ -2,7 +2,7 @@
 //在修改动态数组内某个元素的值的时候，例如 codex[9] = 0x12345678，实质上是将 0x12345678 写入到 存储槽 slot (keccak256(bytes32(1)) + 9)  里面
 //根据import关系，slot数据存储排序，再结合读取slot0的数据可知，owner合约的地址与bool参数放在了一个slot里面（slot0）
 
-step1: 我们需要调用make_contact(), 使 contact = true
+step1: 我们需要调用makeContact(), 使 contact = true
 
 //codex[n] 的值，就是 第 ( keccak256(bytes32(1)) + n ) 个 slot 的值。如果我们通过构造一个 n ,让 keccak256(bytes32(1)) + n = 0 。
 //向上溢出，让keccak256(bytes32(1)) + n=2^256,构造如此大的数组，codex.push() 去填充显然是极其不划算的
