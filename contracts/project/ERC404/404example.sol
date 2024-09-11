@@ -3,10 +3,10 @@ pragma solidity ^0.8.20;
 
 import {IERC721Receiver} from "@openzeppelin/contracts/interfaces/IERC721Receiver.sol";
 import {IERC165} from "@openzeppelin/contracts/interfaces/IERC165.sol";
-import {IERC404} from "./interfaces/IERC404.sol";
-import {DoubleEndedQueue} from "./lib/DoubleEndedQueue.sol";
-import {ERC721Events} from "./lib/ERC721Events.sol";
-import {ERC20Events} from "./lib/ERC20Events.sol";
+import {IERC404} from "../interfaces/IERC404.sol";
+import {DoubleEndedQueue} from "../lib/DoubleEndedQueue.sol";
+import {ERC721Events} from "../lib/ERC721Events.sol";
+import {ERC20Events} from "../lib/ERC20Events.sol";
 
 abstract contract ERC404 is IERC404 {
   using DoubleEndedQueue for DoubleEndedQueue.Uint256Deque;
