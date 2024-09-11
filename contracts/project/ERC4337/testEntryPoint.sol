@@ -31,6 +31,3 @@ contract testEntryPoint {
         depositTo(msg.sender);
     }
 }
-
-
-//https://biconomy.notion.site/ERC-4337-Decoding-EntryPoint-and-UserOperation-c9589d072041413486d2caef49260f9f
