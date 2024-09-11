@@ -5,7 +5,7 @@ import {Receiver} from "./Receiver.sol";
 import {LibZip} from "../utils/LibZip.sol";
 import {Ownable} from "../auth/Ownable.sol";
 import {UUPSUpgradeable} from "../utils/UUPSUpgradeable.sol";
-import {SignatureCheckerLib, ERC1271} from "../accounts/ERC1271.sol";
+import {SignatureCheckerLib, ERC1271} from "./ERC1271.sol";
 
 
 abstract contract ERC4337 is Ownable, UUPSUpgradeable, Receiver, ERC1271 {
